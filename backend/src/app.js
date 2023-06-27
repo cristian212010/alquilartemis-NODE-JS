@@ -13,6 +13,10 @@ const app = express();
 //indicamos el puerto donde se va a ejecutar
 app.set("port", 5000);
 
+//Middleware
+//parsea de JSON
+app.use(express.json());
+
 //Routes
 //use es un metodo de node JS que entiende todos los metodos http(POST,GET,PUT, etc)
 //el primer argumento es para enrutar las routes

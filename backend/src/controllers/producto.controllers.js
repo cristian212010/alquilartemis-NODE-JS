@@ -14,6 +14,20 @@ const getProductos = async (req, res) => {
   }
 };
 
+const addProductos = async(req, res) =>{
+  try {
+    const {nombre_producto,precio_x_dia,stock_producto,categoria_producto} = req.body;
+    const producto = {nombre_producto, precio_x_dia,stock_producto,categoria_producto};
+    const connection = await getConnection();
+    const result = await connection.query("INSERT INTO productos SET ?", producto);
+    res.json(result);
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
+
 export const methodsHTTP = {
   getProductos,
+  addProductos
 };

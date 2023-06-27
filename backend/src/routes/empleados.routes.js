@@ -4,5 +4,6 @@ import { methodsHTTP as empleadosRoutes } from "../controllers/empleado.controll
 const router = Router();
 
 router.get("/", empleadosRoutes.getEmpleados);
+router.post("/", empleadosRoutes.addEmpleados);
 
 export default router;

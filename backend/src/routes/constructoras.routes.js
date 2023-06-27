@@ -4,5 +4,6 @@ import { methodsHTTP as constructorasRoutes } from "../controllers/constructora.
 const router = Router();
 
 router.get("/", constructorasRoutes.getConstructoras);
+router.post("/", constructorasRoutes.addConstructoras);
 
 export default router;
